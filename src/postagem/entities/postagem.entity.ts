@@ -1,7 +1,7 @@
 import { Transform, TransformFnParams } from "class-transformer";
 import { IsNotEmpty, Length } from "class-validator";
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
-// import { Tema } from "../../tema/entities/tema.entity";
+import { Tema } from "../tema/entities/tema.entity";
 
 @Entity({name: "tb_postagens"}) // CREATE TABLE tb_postagens
 export class Postagem{
@@ -25,7 +25,7 @@ export class Postagem{
   data: Date; // DATETIME(6)
 
 
-  @ManyToOne( () => Tema, (tema) => tema.postagem,{
+  @ManyToOne( () => Tema, (tema) => tema.postagens,{
     onDelete: "CASCADE"
   })
   @JoinColumn({name: "tema_id"

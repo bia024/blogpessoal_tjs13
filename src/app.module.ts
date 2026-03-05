@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PostagemModule } from './postagem/postagem.module';
-import { TemaModule } from './tema/tema.module';
+import { TemaModule } from './postagem/tema/tema.module';
 import { Postagem } from './postagem/entities/postagem.entity';
-import { Tema } from './tema/entities/tema.entity';
+import { Tema } from './postagem/tema/entities/tema.entity';
 
 @Module({
   imports: [

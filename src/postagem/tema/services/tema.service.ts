@@ -1,7 +1,7 @@
 import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Tema } from "../entities/tema.entity";
-import { ILike, Repository } from "typeorm";
+import { DeleteResult, ILike, Repository } from "typeorm";
 
 @Injectable()
 export class TemaService{
@@ -56,8 +56,8 @@ export class TemaService{
         return await this.temaRepository.save(tema);
     }
     async delete(id: number): Promise<DeleteResult>{
-        if (!this.temaRepository.findOneBy({id}))
+        if (!await this.temaRepository.findOneBy({id}))
             throw new HttpException('Tema não encontrado', HttpStatus.NOT_FOUND);
-        await this.temaRepository.delete(id);
+        return await this.temaRepository.delete(id);
     }
 }

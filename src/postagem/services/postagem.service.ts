@@ -20,17 +20,17 @@ export class PostagemService{
         });
     }
 
-    async findAll(id: number): Promise<Postagem[]>{
-        //SELECT * FROM tb_postagens WHERE id = id
-        return await this.postagemRepository.find({
-            where: {
-                id
-            },
-            relations: {
-                tema: true
-            }
-        })
-    }
+    // async findAll(id: number): Promise<Postagem[]>{
+    //     //SELECT * FROM tb_postagens WHERE id = id
+    //     return await this.postagemRepository.find({
+    //         where: {
+    //             id
+    //         },
+    //         relations: {
+    //             tema: true
+    //         }
+    //     })
+    // }
 
     async findById(id: number): Promise<Postagem>{
         //SELECT * FROM tb_postagens WHERE id = id
