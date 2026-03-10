@@ -1,8 +1,8 @@
-import { Module } from "@nestjs/common";
-import { TypeOrmModule } from "@nestjs/typeorm";
-import { Tema } from "./entities/tema.entity";
-import { TemaController } from "./controllers/tema.controller";
-import { TemaService } from "./services/tema.service";
+import { Module } from '@nestjs/common';
+import { TemaService } from './services/tema.service';
+import { TemaController } from './controllers/tema.controller';
+import { Tema } from './entities/tema.entity';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
     imports: [TypeOrmModule.forFeature([Tema])],
