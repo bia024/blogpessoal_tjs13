@@ -23,8 +23,9 @@ export class AuthService{
         const matchPassword = await this.bcrypt.compararSenhas(password, buscaUsuario.senha)
 
         // desestruturacao do objeto. retorna tudo, menos a senha. para nao devolver a senha do usuario, mesmo que seja criptografada.
-            
+        // ... operador rest, pega o restante do objeto e coloca na variavel resposta. entao resposta tem tudo, menos a senha.
         if(matchPassword){
+            // chamamos de unspread (ou spread?)
             const { senha, ...resposta } = buscaUsuario
             return resposta
         }

@@ -20,7 +20,7 @@ import { UsuarioModule } from './usuario/usuario.module';
       entities: [Postagem, Tema, Usuario], //unica coisa mexer nisso
       autoLoadEntities: true,
       synchronize: true,
-      logging: true,
+      // logging: true,
     }),
     PostagemModule, 
     TemaModule,

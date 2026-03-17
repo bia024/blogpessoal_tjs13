@@ -1,7 +1,7 @@
 import { Transform, TransformFnParams } from 'class-transformer';
 import { IsNotEmpty, Length } from 'class-validator';
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
-import { Tema } from '../tema/entities/tema.entity';
+import { Tema } from '../tema/entities/tema.entity'; //caminho relativo vs caminho absoluto / caminho relativo para deploy e jest são essenciais
 import { Usuario } from '../../usuario/entities/usuario.entity';
 
 @Entity({ name: 'tb_postagens' }) // CREATE TABLE tb_postagens
